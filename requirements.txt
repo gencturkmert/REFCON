@@ -1,0 +1,9 @@
+# REFCON runtime dependencies (versions the paper was run with; newer patch versions are fine).
+torch==2.10.0            # CUDA 12.8 build for GPU; CPU/MPS wheels also work
+numpy==2.3.5
+scipy==1.16.3
+pandas==2.3.3
+scikit-learn==1.8.0
+anndata==0.12.10
+scanpy==1.12.0
+h5py==3.15.1

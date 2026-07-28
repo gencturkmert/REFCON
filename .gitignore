@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+out/
+*.log
+# Large artifacts live on Zenodo (scripts/fetch_data.py); keep them out of git or use git-lfs:
+data/**/*.h5ad
+data/**/*.npy
+checkpoints/*.pt
