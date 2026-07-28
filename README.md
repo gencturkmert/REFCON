@@ -2,9 +2,8 @@
 
 **Reference-free copy-number inference from single-cell RNA-seq.**
 
-REFCON is a gene-identity-agnostic Transformer that predicts a genome-wide, per-cell copy-number
-profile from scRNA-seq expression alone, without any reference panel, diploid baseline, or in-sample
-normal cells. It estimates local copy-number deviations within short windows of neighboring genes and
+REFCON is a deep-learning model that predicts a genome-wide, per-cell copy-number profile from
+scRNA-seq expression alone, without any reference panel, diploid baseline, or in-sample normal cells. It estimates local copy-number deviations within short windows of neighboring genes and
 stitches them into each cell's genome-wide profile. Trained once on cell lines with bulk-DNA
 copy-number labels and applied without per-dataset tuning, it generalizes across cell lines, tissues,
 and platforms (10x, Smart-seq2, DNTR-seq, scONE-seq, BD Rhapsody).
@@ -44,8 +43,8 @@ python scripts/classify.py --data your_sample.h5ad --cn out/your_sample/ens3_cn.
 ```
 Confident-diploid detection (marker enrichment on expression), then GMM clustering on the CN
 predictions, then per-cluster Pearson labeling (T=0.75), with a pure-sample dispersion fallback
-(T_sigma=0.135). Reference-free upstream: the diploid set only *labels*, it never generates the CN
-signal.
+(T_sigma=0.135). The confident-diploid cells only label clusters; they are not used to compute the
+copy-number profiles.
 
 ## Training
 ```bash

@@ -19,9 +19,9 @@ Genes must be **sorted by genomic position within each chromosome**, and `var` m
 | `abspos`      | absolute genome position (used for ordering)                     |
 | `chr_boundary`| `1` for the first gene of each chromosome, else `0`              |
 
-REFCON is **gene-identity-agnostic**: it uses only these positions and chromosome boundaries, never
-gene names or gene-set memberships. A single trained model therefore applies across gene panels and
-platforms (10x, Smart-seq2, DNTR-seq, scONE-seq, BD Rhapsody) without retraining.
+REFCON uses only these positions and chromosome boundaries, never gene names or gene-set memberships.
+A single trained model therefore applies across gene panels and platforms (10x, Smart-seq2, DNTR-seq,
+scONE-seq, BD Rhapsody) without retraining.
 
 Example (`data/a375/a375_dntr_per_cell.h5ad`):
 ```
